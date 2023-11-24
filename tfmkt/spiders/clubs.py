@@ -68,7 +68,7 @@ class ClubsSpider(BaseSpider):
 
     # parsing of "dataMarktwert" section
 
-    attributes['total_market_value'] = response.css('div.dataMarktwert a::text').get()
+    attributes['total_market_value'] = response.css('a.data-header__market-value-wrapper::text').get()
 
     # parsing of "dataContent" section
 
