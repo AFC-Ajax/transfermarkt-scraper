@@ -115,6 +115,9 @@ class CompetitionsSpider(BaseSpider):
       tier = row.xpath('td/text()').get()
       if tier in [
         'First Tier',
+        'Second Tier',
+        'Third Tier',
+        'Fourth Tier',
         'Domestic Cup',
         'Domestic Super Cup'
       ]:
