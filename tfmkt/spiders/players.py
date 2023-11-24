@@ -85,7 +85,7 @@ class PlayersSpider(BaseSpider):
       'href': response.xpath("//span[contains(text(),'Current club:')]/following::span[1]/a/@href").get()
     }
     attributes['foot'] = response.xpath("//span[text()='Foot:']/following::span[1]/text()").get()
-    attributes['joined'] = response.xpath("//span[text()='Joined:']/following::span[1]/text()").get()
+    attributes['joined'] = self.safe_strip(response.xpath("//span[text()='Joined:']/following::span[1]/text()").get())
     attributes['contract_expires'] = self.safe_strip(response.xpath("//span[text()='Contract expires:']/following::span[1]/text()").get())
     attributes['day_of_last_contract_extension'] = response.xpath("//span[text()='Date of last contract extension:']/following::span[1]/text()").get()
     attributes['outfitter'] = response.xpath("//span[text()='Outfitter:']/following::span[1]/text()").get()
